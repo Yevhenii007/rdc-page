@@ -1,0 +1,150 @@
+{
+  "env": {
+    "es6": true
+  },
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*",
+    "dist/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "plugins": [
+        "prettier",
+        "simple-import-sort",
+        "unused-imports",
+        "@typescript-eslint"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended",
+        "prettier"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": ["@ngx-translate/core", "@ngx-translate/http-loader"]
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "tnt",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "tnt",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/no-output-on-prefix": 0,
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "no-public"
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "default",
+            "modifiers": ["private"],
+            "format": null,
+            "leadingUnderscore": "require"
+          },
+          {
+            "selector": "default",
+            "modifiers": ["public"],
+            "format": null,
+            "leadingUnderscore": "forbid"
+          },
+          {
+            "selector": "default",
+            "modifiers": ["protected"],
+            "format": null,
+            "leadingUnderscore": "forbid"
+          },
+          {
+            "selector": ["variable", "function", "method"],
+            "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+          },
+          {
+            "selector": ["variable", "function", "method"],
+            "modifiers": ["private"],
+            "format": ["camelCase", "UPPER_CASE", "PascalCase"],
+            "leadingUnderscore": "require"
+          }
+        ],
+        "prettier/prettier": [
+          "error",
+          {
+            "tabWidth": 4,
+            "printWidth": 120
+          }
+        ],
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "warn",
+          {
+            "vars": "all",
+            "varsIgnorePattern": "^_",
+            "args": "after-used",
+            "argsIgnorePattern": "^_"
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "parser": "@angular-eslint/template-parser",
+      "rules": {
+        "prettier/prettier": [
+          "error",
+          {
+            "parser": "angular",
+            "tabWidth": 2,
+            "singleQuote": true,
+            "singleAttributePerLine": true,
+            "bracketSpacing": true,
+            "bracketSameLine": true,
+            "printWidth": 120
+          }
+        ],
+        "@angular-eslint/template/attributes-order": [
+          "error",
+          {
+            "alphabetical": false,
+            "order": [
+              "STRUCTURAL_DIRECTIVE",
+              "TEMPLATE_REFERENCE",
+              "ATTRIBUTE_BINDING",
+              "INPUT_BINDING",
+              "TWO_WAY_BINDING",
+              "OUTPUT_BINDING"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
