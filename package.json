@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-gh": "ng build --base-href \"https://yevhenii007.github.io/rdc-page/\"",
+    "ghpages": "npx angular-cli-ghpages --dir=dist/rdc-frontend/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
