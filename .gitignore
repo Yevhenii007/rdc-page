@@ -1,12 +1,14 @@
 
-#node_modules
-#src
-#.angular
-#.nx
-#.eslintrc.json
-#angular.json
-#package-lock.json
-#README.md
-#tsconfig.app.json
-#tsconfig.json
-#tsconfig.spec.json
+node_modules
+src
+.angular
+.nx
+.eslintrc.json
+angular.json
+package-lock.json
+README.md
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
+.idea
+.DS_Store
